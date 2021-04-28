@@ -15,8 +15,10 @@ const postcssPresets = require('postcss-preset-env');
 module.exports = {
   devServer: {
     hot: true,
+    historyApiFallback: true,
   },
   mode: env,
+  output: { publicPath: '/' },
   entry: ['./src'], // this is where our app lives
   devtool: 'source-map', // this enables debugging with source in chrome devtools
   module: {
@@ -36,9 +38,9 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use: [ //this is the part you want to add
-            { loader: 'babel-loader'}
-        ]
+        use: [ // this is the part you want to add
+          { loader: 'babel-loader' },
+        ],
       },
       {
         test: /\.s?css/,
@@ -76,11 +78,11 @@ module.exports = {
   plugins: [
     new MiniCssExtractPlugin({
       filename: '[name].css',
-    }), 
+    }),
     new ESLintPlugin({}),
     new HtmlWebpackPlugin({
-    template: './src/index.html',
-    filename: './index.html',
+      template: './src/index.html',
+      filename: './index.html',
     }),
-  ], 
+  ],
 };
