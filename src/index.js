@@ -4,12 +4,22 @@ import {
 } from 'react-router-dom';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware, compose } from 'redux';
+import Controls from './components/controls';
+
+import reducers from './reducers';
 
 const About = (props) => {
   return <div> Hi my name is Will. I am a 23 at Dartmouth and very excited about web dev!!  </div>;
 };
 const Welcome = (props) => {
-  return <div>Welcome</div>;
+  return (
+    <div>
+      <div>Welcome</div>
+      <Controls />
+    </div>
+  );
 };
 
 const Nav = (props) => {
@@ -33,6 +43,13 @@ const Test = (props) => {
   return <div> ID: {props.match.params.id} </div>;
 };
 
+// this creates the store with the reducers, and does some other stuff to initialize devtools
+// boilerplate to copy, don't have to know
+const store = createStore(reducers, {}, compose(
+  applyMiddleware(),
+  window.__REDUX_DEVTOOLS_EXTENSION__ ? window.__REDUX_DEVTOOLS_EXTENSION__() : (f) => f,
+));
+
 const App = (props) => {
   return (
     <div>
@@ -52,4 +69,9 @@ const App = (props) => {
   );
 };
 
-ReactDOM.render(<App />, document.getElementById('main'));
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.getElementById('main'),
+);
