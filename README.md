@@ -14,4 +14,4 @@ Understanding redux. It feels complex and strange, but will likely become much m
 
 ## Screenshots
 
-
+![](src/img/scRedux.png)
