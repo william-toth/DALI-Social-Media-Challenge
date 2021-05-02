@@ -55,7 +55,7 @@ const store = createStore(reducers, {}, compose(
 const App = (props) => {
   return (
     <div>
-      <h1>Front End Routing!!</h1>
+      <h1>Redux!!</h1>
       <Router>
         <div>
           <Nav />
