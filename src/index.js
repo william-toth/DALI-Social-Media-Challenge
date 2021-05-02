@@ -7,6 +7,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, compose } from 'redux';
 import Controls from './components/controls';
+import Counter from './components/counter';
 
 import reducers from './reducers';
 
@@ -17,6 +18,7 @@ const Welcome = (props) => {
   return (
     <div>
       <div>Welcome</div>
+      <Counter />
       <Controls />
     </div>
   );
