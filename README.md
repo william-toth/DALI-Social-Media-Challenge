@@ -22,6 +22,6 @@ I did 2 things for extra credit:
 
 ## Screenshots
 
-![](sc1.png)
-![](sc2.png)
-![](sc3.png)
+![](src/img/sc1.png)
+![](src/img/sc2.png)
+![](src/img/sc3.png)
