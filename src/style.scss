@@ -1,0 +1,202 @@
+body, html {
+    font-family: Futura, "Roboto", sans-serif;
+    background: #457b9d;
+    color: #1d3557;
+    height: 100%;
+}
+
+.title {
+    font-family: "Futura", sans-serif;
+    color: #e63946;
+    letter-spacing: 20px;
+    font-size: 50px;
+    margin-left: 10px;
+}
+
+nav {
+    background-color: #a8dadc;
+    width: 100vw;
+    position: relative;
+    right: 0.5vw;
+    padding-top: 20px;
+    bottom: 20px;
+    box-shadow: 0px 10px 150px black;
+}
+
+.nav-div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.link-div {
+    position: relative;
+    top: 15px;
+    right: 10px;
+}
+
+.nav-link {
+    text-decoration: none;
+    font-size: 1.5rem;
+    margin: 15px;
+}
+
+.nav-link, .nav-link:visited, .nav-link:hover, .nav-link:active {
+    color: #1d3557;
+}
+
+.active {
+    color: pink;
+    }
+
+.all-posts {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.posts-post {
+    width: 20vw;
+    margin: 2vw;
+    transition: 0.3s;
+}
+
+.posts-post:hover {
+    box-shadow: 0px 0px 35px black;
+    cursor: pointer;
+}
+
+.cover-img {
+    width: 20vw;
+    height: 20vw;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.words-div {
+    width: 100%;
+    background-color: #a8dadc;;
+    border: 0px;
+    margin-top: -4px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.small-post-title {
+    font-size: 1.2rem;
+    padding: 5%;
+    padding-bottom: 0%;
+}
+
+.delete {
+    width: 10%;
+    margin-left: 5%;
+    transition: 0.3s;
+}
+
+.delete:hover {
+    transform: translateY(-10%);
+}
+
+.tags {
+    margin: 5%;
+    margin-top: 0%;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    color: rgb(30%,30%,30%);
+}
+
+.post {
+    background-color: #a8dadc;
+    margin-top: 75px;
+    margin-left: 20vw;
+    margin-right: 20vw;
+    border-radius: 7px;
+}
+
+.add-post {
+    background-color: transparent;
+    width: 150px;
+    height: 50px;
+    border: 2px solid #1d3557;
+    color: #1d3557;
+    font-size: 1.25rem;
+    font-family: Futura;
+    margin-top: 20px;
+    border-radius: 7px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.add-post:hover {
+    background-color: #1d3557;
+    color: #a8dadc;
+}
+
+.post-title {
+    font-family: "Futura", sans-serif;
+    color: #e63946;
+    letter-spacing: 7px;
+    font-size: 40px;
+    padding: 10px;
+    padding-left: 3%;
+    padding-bottom: 0px;
+}
+
+.new-post-title {
+    font-family: "Futura", sans-serif;
+    color: #e63946;
+    letter-spacing: 7px;
+    font-size: 40px;
+}
+
+.content {
+    padding: 3%;
+    padding-top: 0%;
+    font-size: 1.1rem;
+}
+
+.post-tags {
+    margin: 10px;
+    margin-left: 3%;
+    margin-top: 0px;
+    font-size: 20px;
+    color: rgb(30%,30%,30%);
+}
+
+.new-post-div {
+    padding: 3%;
+}
+
+.post-change {
+    width: 5%;
+    margin: 3%;
+    margin-bottom: 0%;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.post-change:hover {
+    transform: translateY(-10%);
+}
+
+.post-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.field {
+    margin: 10px;
+    margin-left: 0px;
+    font-size: 1.5rem;
+}
+
+textarea {
+    outline: none;
+    border: 0px;
+    border-radius: 7px;
+    width: 50%;
+}
+
+.content-input {
+    height: 100px;
+}
