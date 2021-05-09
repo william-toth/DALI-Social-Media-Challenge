@@ -21,3 +21,7 @@ I did 2 things for extra credit:
 2) added a filler image (sort of a default) for when a user decides not to enter a cover image url to improve UI and make it look less clunky
 
 ## Screenshots
+
+![](sc1.png)
+![](sc2.png)
+![](sc3.png)
