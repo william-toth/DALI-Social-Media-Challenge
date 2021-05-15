@@ -32,7 +32,6 @@ class Post extends Component {
   }
 
   renderPost = () => {
-    console.log(this.state.firstRender);
     if (this.state.firstRender) {
       return (
         <div className="post">
@@ -41,7 +40,6 @@ class Post extends Component {
             <img className="post-change" src={editImg} onClick={this.toggleEdit} />
           </div>
           <div className="post-tags">
-            {console.log(this.props.current.tags)}
             { this.props.current.tags != null
               && this.props.current.tags.map((tag) => {
                 return <span>{tag} </span>;
