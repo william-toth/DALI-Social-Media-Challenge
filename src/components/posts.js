@@ -46,7 +46,10 @@ class Posts extends Component {
               {this.renderImg(post.coverUrl)}
               <div className="words-div">
                 <div className="small-post-title">{post.title}</div>
-                <div className="tags">{post.tags}</div>
+                <div className="tags">{post.tags.map((tag) => {
+                  return <span>{tag} </span>;
+                })}
+                </div>
                 <img src={deleteImg} className="delete" onClick={() => { this.delete(post); }} />
               </div>
             </div>

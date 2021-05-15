@@ -9,8 +9,11 @@ export const ActionTypes = {
   FETCH_POST: 'FETCH_POST',
 };
 
-const ROOT_URL = 'https://platform.cs52.me/api';
-const API_KEY = '?key=william_toth';
+// const ROOT_URL = 'https://platform.cs52.me/api';
+// const API_KEY = '?key=william_toth';
+// const ROOT_URL = 'http://localhost:9090/api';
+const ROOT_URL = 'https://posting-api.herokuapp.com/api';
+const API_KEY = '';
 
 export function newPost(post, history) {
   return (dispatch) => {

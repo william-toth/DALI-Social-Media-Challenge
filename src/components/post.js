@@ -1,3 +1,4 @@
+/* eslint-disable eqeqeq */
 /* eslint-disable react/button-has-type */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable react/no-access-state-in-setstate */
@@ -39,7 +40,13 @@ class Post extends Component {
             <div className="post-title">{this.props.current.title}</div>
             <img className="post-change" src={editImg} onClick={this.toggleEdit} />
           </div>
-          <div className="post-tags">{this.props.current.tags}</div>
+          <div className="post-tags">
+            {console.log(this.props.current.tags)}
+            { this.props.current.tags != null
+              && this.props.current.tags.map((tag) => {
+                return <span>{tag} </span>;
+              })}
+          </div>
           <ReactMarkdown className="content">{this.props.current.content}</ReactMarkdown>
         </div>
       );
@@ -47,7 +54,10 @@ class Post extends Component {
       return (
         <div className="post">
           <div className="post-title">{this.state.title}</div>
-          <div className="post-tags">{this.state.tags}</div>
+          <div className="post-tags">{this.state.tags.map((tag) => {
+            return <span>{tag} </span>;
+          })}
+          </div>
           <ReactMarkdown className="content">{this.state.content}</ReactMarkdown>
           <button onClick={this.toggleEdit}>edit</button>
         </div>
@@ -69,11 +79,39 @@ class Post extends Component {
   }
 
   changeTags = (event) => {
-    this.setState({ tags: event.target.value });
+    const tagStr = event.target.value;
+    let currWord = '';
+    const arr = [];
+    for (let i = 0; i < tagStr.length; i += 1) {
+      const letter = tagStr[i];
+      if (letter == ' ' || i == tagStr.length - 1) {
+        if (i == tagStr.length - 1) {
+          currWord += letter;
+        }
+        arr.push(currWord);
+        currWord = '';
+      } else {
+        currWord += letter;
+      }
+    }
+    this.setState({ tags: arr });
   }
 
   changeContent = (event) => {
     this.setState({ content: event.target.value });
+  }
+
+  tagsToString = (tags) => {
+    if (tags != null) {
+      let str = '';
+      for (const tag of tags) {
+        str += tag;
+        str += ' ';
+      }
+      return str;
+    } else {
+      return '';
+    }
   }
 
   renderEdit = () => {
@@ -82,11 +120,11 @@ class Post extends Component {
         <div className="new-post-div">
           <div className="new-post-title">Edit Post</div>
           <div className="field">Title</div>
-          <textarea onChange={this.changeTitle}>{this.props.current.title}</textarea>
+          <textarea onChange={this.changeTitle} defaultValue={this.props.current.title} />
           <div className="field">Tags</div>
-          <textarea onChange={this.changeTags}>{this.props.current.tags}</textarea>
+          <textarea onChange={this.changeTags} defaultValue={this.tagsToString(this.props.current.tags)} />
           <div className="field">Content</div>
-          <textarea onChange={this.changeContent} className="content-input">{this.props.current.content}</textarea>
+          <textarea onChange={this.changeContent} className="content-input" defaultValue={this.props.current.content} />
           <div>
             <button className="add-post" onClick={this.toggleEdit}>done</button>
           </div>
@@ -95,88 +133,9 @@ class Post extends Component {
     );
   }
 
-  //   renderPost = () => {
-  //     let titleToDisplay = null;
-  //     if (this.state.editingTitle) {
-  //       titleToDisplay = (
-  //         <span>
-  //           <textarea onChange={this.handleTitleChange} />
-  //           <button onClick={this.toggleTitleEdit}>done</button>
-  //         </span>
-  //       );
-  //     } else {
-  //       titleToDisplay = <h2 onClick={this.toggleTitleEdit}>{this.state.tempTitle}</h2>;
-  //     }
-
-  //     let tagsToDisplay = null;
-  //     if (this.state.editingTags) {
-  //       tagsToDisplay = (
-  //         <span>
-  //           <textarea onChange={this.handleTagsChange} />
-  //           <button onClick={this.toggleTagsEdit}>done</button>
-  //         </span>
-  //       );
-  //     } else {
-  //       tagsToDisplay = <div onClick={this.toggleTagsEdit}>{this.state.tempTags}</div>;
-  //     }
-
-  //     let contentToDisplay = null;
-  //     if (this.state.editingContent) {
-  //       contentToDisplay = (
-  //         <span>
-  //           <textarea onChange={this.handleContentChange} />
-  //           <button onClick={this.toggleContentEdit}>done</button>
-  //         </span>
-  //       );
-  //     } else {
-  //       contentToDisplay = <div onClick={this.toggleContentEdit}>{this.state.tempContent}</div>;
-  //     }
-
-  //     return (
-  //       <div className="post">
-  //         {titleToDisplay}
-  //         {tagsToDisplay}
-  //         {contentToDisplay}
-  //       </div>
-  //     );
-  //   }
-
-  //   toggleTitleEdit = () => {
-  //     if (this.state.editingTitle) {
-  //     //   this.updatePost();
-  //     }
-  //     this.setState({ editingTitle: !this.state.editingTitle });
-  //   }
-
-  //   toggleTagsEdit = () => {
-  //     if (this.state.editingTags) {
-  //     //   this.updatePost();
-  //     }
-  //     this.setState({ editingTags: !this.state.editingTags });
-  //   }
-
-  //   toggleContentEdit = () => {
-  //     if (this.state.editingContent) {
-  //     //   this.updatePost();
-  //     }
-  //     this.setState({ editingContent: !this.state.editingContent });
-  //   }
-
-  //   handleTitleChange = (event) => {
-  //     this.setState({ tempTitle: event.target.value });
-  //   }
-
-  //   handleTagsChange = (event) => {
-  //     this.setState({ tempTags: event.target.value });
-  //   }
-
-  //   handleContentChange = (event) => {
-  //     this.setState({ tempContent: event.target.value });
-  //   }
-
     updatePost = () => {
       const fields = {
-        id: this.props.current.id, title: this.state.title, tags: this.state.tags, content: this.state.content, coverUrl: this.props.current.coverUrl,
+        id: this.props.current.id, title: this.state.title, tags: this.tagsToString(this.state.tags), content: this.state.content, coverUrl: this.props.current.coverUrl,
       };
       this.props.updatePost(fields);
     }
