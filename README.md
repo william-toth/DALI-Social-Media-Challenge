@@ -1,27 +1,7 @@
-# React/Redux Posting
+# DALI Social Media Challenge
 
-In this lab, we expand on our react notes lab and go much further by using redux to allow users to make and view posts. What I noticed is that while confusing at first, Redux allows us to easily access information across many components.
+Deployed [HERE](https://dali-social-media-challenge.netlify.app/)
 
-[deployed url](https://redux-notes.netlify.app/)
+**Note:** The backend/api I created is under a different github repo linked [here](https://github.com/william-toth/DALI-Social-Media-API)
 
-## What Worked Well
-
-What worked well was my ability to easily create and pass data between new components one the actions and reducers were coded. The redux state allowed me to do this with ~relative~ ease.
-
-## What Didn't
-
-What didn't work so well was the asynchronous nature of the API calls. I would perform some action, and when I expected to see a result, there wasn't one because the API call hadn't finished before the results were displayed. This happened in a number of places and required a relatively unique workaround in each case.
-
-## Extra Credit
-
-I did 2 things for extra credit:
-
-1) Alerting the user if they don't fill out the title and content fields when making a new post
-
-2) added a filler image (sort of a default) for when a user decides not to enter a cover image url to improve UI and make it look less clunky
-
-## Screenshots
-
-![](src/img/sc1.png)
-![](src/img/sc2.png)
-![](src/img/sc3.png)
+Hi. Welcome to my submission for the DALI developer challenge. I have chosen to do both the front end and back end challenges, with the front end hosted on Netlify and the back on Heroku. The front end uses React, Redux, and React Bootstrap, and there are a few features here. First is the profiles. Click the profiles link in the nav bar to see a list of all profiles. To view more information on a DALI member, you can click the button on the bottom of a profile tile. While these user profiles are not stored in any database, the posts are (using MongoDB along with an API I made). The API supports get, post, put, and delete routes. Go ahead, add a new post, or delete one!! In addition, the activity bar at the moment is mostly for aesthetics and does not represent any change in the database (as there is no login functionality right now nor is there anyone using this social media). Enjoy!!
