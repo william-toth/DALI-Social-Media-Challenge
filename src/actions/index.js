@@ -7,12 +7,13 @@ export const ActionTypes = {
   // EDITPOST: 'UPDATEPOST',
   FETCH_POSTS: 'FETCH_POSTS',
   FETCH_POST: 'FETCH_POST',
+  SHOW_PROF: 'SHOW_PROF',
 };
 
 // const ROOT_URL = 'https://platform.cs52.me/api';
-// const API_KEY = '?key=william_toth';
-// const ROOT_URL = 'http://localhost:9090/api';
-const ROOT_URL = 'https://posting-api.herokuapp.com/api';
+// const API_KEY = '?key=wtoth1';
+const ROOT_URL = 'http://localhost:9090/api';
+// const ROOT_URL = 'https://posting-api.herokuapp.com/api';
 const API_KEY = '';
 
 export function newPost(post, history) {
@@ -69,6 +70,15 @@ export function fetchPosts() {
         type: ActionTypes.FETCH_POSTS,
         payload: null,
       });
+    });
+  };
+}
+
+export function showProf(prof) {
+  return (dispatch) => {
+    dispatch({
+      type: ActionTypes.SHOW_PROF,
+      payload: prof,
     });
   };
 }

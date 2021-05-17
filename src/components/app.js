@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import {
@@ -9,20 +10,9 @@ import Post from './post';
 // import Post from './post';
 import NewPost from './newpost';
 import { fetchPosts } from '../actions';
-
-const Nav = (props) => {
-  return (
-    <nav>
-      <div className="nav-div">
-        <div className="title">POSTS</div>
-        <div className="link-div">
-          <NavLink className="nav-link" to="/">All Posts</NavLink>
-          <NavLink className="nav-link" to="/posts/new">New Post</NavLink>
-        </div>
-      </div>
-    </nav>
-  );
-};
+import Profiles from './profiles';
+import NavigationBar from './nav';
+import Profile from './profile';
 
 class App extends Component {
   constructor(props) {
@@ -38,16 +28,19 @@ class App extends Component {
   // Render these components
   render() {
     return (
-      <div>
+      <div className="everything">
         <Router>
-          <div>
-            <Nav />
-            <Switch>
-              <Route exact path="/" component={Posts} />
-              <Route exact path="/posts/new" component={NewPost} />
-              <Route path="/posts/:id" component={Post} />
-            </Switch>
-          </div>
+          {/* <div>
+            <Nav /> */}
+          <NavigationBar />
+          <Switch>
+            <Route exact path="/profiles" component={Profiles} />
+            <Route exact path="/" component={Posts} />
+            <Route exact path="/posts/new" component={NewPost} />
+            <Route exact path="/profiles/:profile" component={Profile} />
+            {/* <Route path="/posts/:id" component={Post} /> */}
+          </Switch>
+          {/* </div> */}
         </Router>
       </div>
     );
