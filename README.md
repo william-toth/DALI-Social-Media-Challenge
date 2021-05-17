@@ -1,7 +1,6 @@
 # DALI Social Media Challenge
 
-Deployed [HERE](https://dali-social-media-challenge.netlify.app/)
-[Profiles Page](https://dali-social-media-challenge.netlify.app/profiles)
+Deployed [HERE](https://dali-social-media-challenge.netlify.app/) and the profiles page is [here](https://dali-social-media-challenge.netlify.app/profiles)
 
 **Note:** The backend/api I created is under a different github repo linked [here](https://github.com/william-toth/DALI-Social-Media-API)
 
