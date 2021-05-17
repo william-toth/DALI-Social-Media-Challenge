@@ -73,6 +73,7 @@ class NewPost extends Component {
             </div>
           </Card.Body>
         </Card>
+        <div className="blank-space" />
       </div>
     );
   }

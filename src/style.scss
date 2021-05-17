@@ -263,7 +263,6 @@ h2 {
 .new-post {
     margin-right: 25vw;
     margin-left: 25vw;
-    margin-bottom: 200px;
 }
 
 .all-posts {
@@ -312,6 +311,7 @@ h2 {
     margin-top: 20px;
     margin-left: 1.5vw;
     width: 23.5vw;
+    margin-bottom: 50px;
 }
 
 .all-posts-title {
@@ -327,4 +327,8 @@ h2 {
 
 .activity-name {
     color: #3B55D9;
+}
+
+.blank-space {
+    height: 25vw;
 }

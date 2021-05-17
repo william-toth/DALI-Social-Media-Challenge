@@ -6,7 +6,6 @@ import {
 } from 'react-router-dom';
 import '../style.scss';
 import Posts from './posts';
-import Post from './post';
 // import Post from './post';
 import NewPost from './newpost';
 import { fetchPosts } from '../actions';

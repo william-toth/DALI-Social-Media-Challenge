@@ -12,8 +12,8 @@ export const ActionTypes = {
 
 // const ROOT_URL = 'https://platform.cs52.me/api';
 // const API_KEY = '?key=wtoth1';
-const ROOT_URL = 'http://localhost:9090/api';
-// const ROOT_URL = 'https://posting-api.herokuapp.com/api';
+// const ROOT_URL = 'http://localhost:9090/api';
+const ROOT_URL = 'https://dali-social-media-api.herokuapp.com/api';
 const API_KEY = '';
 
 export function newPost(post, history) {

@@ -4,12 +4,11 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable react/button-has-type */
 import React, { Component } from 'react';
-import { Button, BreadCrumb, Card } from 'react-bootstrap';
+import { Button, Card } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { connect } from 'react-redux';
 import { deletePost, fetchPost } from '../actions';
 import deleteImg from '../img/delete.png';
-import imgError from '../img/no-img.png';
 import data from '../constant/DALI_Data.json';
 
 class Posts extends Component {
